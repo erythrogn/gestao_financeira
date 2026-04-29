@@ -5,26 +5,62 @@
   --color-foreground: var(--foreground);
 }
 
-@keyframes slide-in {
-  0% { transform: translateX(100%) scale(0.9); opacity: 0; }
-  70% { transform: translateX(-10px) scale(1.02); }
-  100% { transform: translateX(0) scale(1); opacity: 1; }
+/* animacoes com aceleracao natural (friccao simulada) */
+@keyframes slide-in-comfort {
+  0% { 
+    transform: translateY(15px); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
 }
 
-@keyframes fade-out {
-  from { opacity: 1; transform: scale(1); }
-  to { opacity: 0; transform: scale(0.95); }
+@keyframes fade-out-comfort {
+  0% { 
+    transform: scale(1);
+    opacity: 1; 
+  }
+  100% { 
+    transform: scale(0.98);
+    opacity: 0; 
+  }
 }
 
+/* a curva 0.2, 0.8, 0.2, 1 inicia rapido e termina bem suave */
 .animate-toast-in {
-  animation: slide-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation: slide-in-comfort 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .animate-toast-out {
-  animation: fade-out 0.3s ease-in forwards;
+  animation: fade-out-comfort 0.4s ease-out forwards;
 }
 
 body {
-  background: #0f1117;
-  color: white;
+  background: var(--color-background, #0f1117);
+  
+  /* off-white para conforto oftalmologico */
+  color: var(--color-foreground, #e2e8f0); 
+  
+  /* suavizacao de bordas nas fontes */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* respiro cognitivo */
+  line-height: 1.6;
+  letter-spacing: 0.015em;
+}
+
+/* classe utilitaria extra para usar nos cards do dashboard */
+.comfort-card {
+  /* bordas arredondadas transmitem amigabilidade (ausencia de perigo) */
+  border-radius: 12px;
+  
+  /* sombra extremamente difusa para simular elevacao natural, sem contraste duro */
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.4), 
+              0 1px 3px rgba(255, 255, 255, 0.03);
+  
+  /* borda imperceptivel para separar do fundo escuro */
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }

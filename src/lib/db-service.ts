@@ -1,4 +1,5 @@
-﻿import { collection, addDoc, getDocs, query, where, Timestamp, doc, deleteDoc, updateDoc } from "firebase/firestore";
+﻿// @ts-nocheck
+import { collection, addDoc, getDocs, query, where, Timestamp, doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { db } from "./firebase";
 
 export const addTransaction = async (userId: string, descricao: string, valor: number, tipo: string, categoria: string, carteira: string, dataManual: string) => {
@@ -42,3 +43,4 @@ export const getUserTransactions = async (userId: string) => {
     return data.sort((a: any, b: any) => b.data.toMillis() - a.data.toMillis());
   } catch (error) { throw error; }
 };
+

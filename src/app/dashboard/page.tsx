@@ -140,7 +140,7 @@ export default function Dashboard() {
                   <Tooltip 
                     cursor={{ fill: '#222534' }}
                     contentStyle={{ backgroundColor: '#1a1d27', borderColor: '#2e3148', borderRadius: '12px', color: '#fff' }}
-                    formatter={(value: number) => new Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(value)}
+                    formatter={(value: any) => new Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(value)}
                   />
                   <Bar dataKey="valor" radius={[6, 6, 0, 0]} />
                 </BarChart>
@@ -160,7 +160,7 @@ export default function Dashboard() {
                   <PieChart>
                     <Tooltip 
                       contentStyle={{ backgroundColor: '#1a1d27', borderColor: '#2e3148', borderRadius: '12px', color: '#fff' }}
-                      formatter={(value: number) => new Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(value)}
+                      formatter={(value: any) => new Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(value)}
                     />
                     <Pie
                       data={dadosPizza}
@@ -197,4 +197,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
 

@@ -13,7 +13,7 @@ export default function Calendario() {
   const [currentDate, setCurrentDate] = useState(new Date());
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser: any) => {
       if (!currentUser) {
         window.location.href = "/";
       } else {

@@ -22,7 +22,7 @@ export default function Dashboard() {
   const cores = ['#6c63ff', '#38bdf8', '#fbbf24', '#f472b6', '#a78bfa', '#4ade80'];
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser: any) => {
       if (!currentUser) {
         window.location.href = "/";
       } else {

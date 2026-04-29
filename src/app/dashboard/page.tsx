@@ -54,7 +54,7 @@ export default function Dashboard() {
               return acc;
             }, []);
           
-          despesasPorCategoria.sort((a, b) => b.value - a.value);
+          despesasPorCategoria.sort((a: any, b: any) => b.value - a.value);
           setDadosPizza(despesasPorCategoria);
 
           // calculo de saldo por carteira
@@ -197,3 +197,4 @@ export default function Dashboard() {
     </div>
   );
 }
+

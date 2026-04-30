@@ -36,7 +36,7 @@ export default function Transacoes() {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser: any) => {
       if (!currentUser) { window.location.href = "/"; } 
       else {
         setUser(currentUser);
